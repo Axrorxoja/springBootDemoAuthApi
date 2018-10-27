@@ -13,8 +13,7 @@ class SignUpRequest(
         if (login.isNotEmpty() &&
                 password.isNotEmpty() &&
                 firstName.isNotEmpty() &&
-                lastName.isNotEmpty()
-        ) return false
+                lastName.isNotEmpty()) return false
         return true
     }
 }

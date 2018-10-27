@@ -1,6 +1,6 @@
 package com.example.demo
 
-import com.example.demo.common.ErrorCodes
+import com.example.demo.common.ErrorCode
 import com.example.demo.controller.IAuthController
 import com.example.demo.models.requests.ForgotRequest
 import com.example.demo.models.requests.ResetPasswordRequest
@@ -26,7 +26,7 @@ class DemoApplicationTests {
         val res = authController.signUp(emptyRequest)
         Assert.assertNotNull(res.error)
         Assert.assertNull(res.success)
-        Assert.assertEquals(res.error, ErrorCodes.EMPTY_DATA)
+        Assert.assertEquals(res.error, ErrorCode.EMPTY_DATA)
     }
 
     @Test
@@ -59,7 +59,7 @@ class DemoApplicationTests {
         res = authController.signUp(successReq)
         Assert.assertNotNull(res.error)
         Assert.assertNull(res.success)
-        Assert.assertEquals(res.error, ErrorCodes.USER_WITH_SUCH_LOGIN_EXIST)
+        Assert.assertEquals(res.error, ErrorCode.USER_WITH_SUCH_LOGIN_EXIST)
     }
 
     private fun createSignUpReq() = SignUpRequest(
@@ -94,7 +94,7 @@ class DemoApplicationTests {
         val res = authController.signIn(req)
         Assert.assertNotNull(res.error)
         Assert.assertNull(res.success)
-        Assert.assertEquals(res.error, ErrorCodes.EMPTY_DATA)
+        Assert.assertEquals(res.error, ErrorCode.EMPTY_DATA)
     }
 
     @Test
@@ -106,7 +106,7 @@ class DemoApplicationTests {
         val res = authController.signIn(reqSignIn)
         Assert.assertNotNull(res.error)
         Assert.assertNull(res.success)
-        Assert.assertEquals(res.error, ErrorCodes.USER_NOT_FOUND)
+        Assert.assertEquals(res.error, ErrorCode.USER_NOT_FOUND)
     }
 
     @Test
@@ -115,7 +115,7 @@ class DemoApplicationTests {
         val res = authController.forget(req)
         Assert.assertNotNull(res.error)
         Assert.assertNull(res.success)
-        Assert.assertEquals(res.error, ErrorCodes.EMPTY_DATA)
+        Assert.assertEquals(res.error, ErrorCode.EMPTY_DATA)
     }
 
     @Test
@@ -127,7 +127,7 @@ class DemoApplicationTests {
         val res = authController.forget(forgotReq)
         Assert.assertNotNull(res.error)
         Assert.assertNull(res.success)
-        Assert.assertEquals(res.error, ErrorCodes.USER_NOT_FOUND)
+        Assert.assertEquals(res.error, ErrorCode.USER_NOT_FOUND)
     }
 
     @Test
@@ -148,7 +148,7 @@ class DemoApplicationTests {
         val res = authController.resetPassword(req)
         Assert.assertNotNull(res.error)
         Assert.assertNull(res.success)
-        Assert.assertEquals(res.error, ErrorCodes.EMPTY_DATA)
+        Assert.assertEquals(res.error, ErrorCode.EMPTY_DATA)
     }
 
     @Test
@@ -162,7 +162,7 @@ class DemoApplicationTests {
         val resReset = authController.resetPassword(reqReset)
         Assert.assertNotNull(resReset.error)
         Assert.assertNull(resReset.success)
-        Assert.assertEquals(resReset.error, ErrorCodes.USER_WITH_SUCH_AUTH_CODE_NOT_FOUND)
+        Assert.assertEquals(resReset.error, ErrorCode.USER_WITH_SUCH_AUTH_CODE_NOT_FOUND)
     }
 
     @Test
