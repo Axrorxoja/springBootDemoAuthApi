@@ -93,7 +93,7 @@ class AuthController : IAuthController {
                 BaseData(ErrorCodes.USER_NOT_FOUND)
             }
         } else {
-            BaseData(ErrorCodes.eUSER_WITH_SUCH_AUTH_CODE_NOT_FOUND)
+            BaseData(ErrorCodes.USER_WITH_SUCH_AUTH_CODE_NOT_FOUND)
         }
         return baseData
     }
